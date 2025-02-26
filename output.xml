@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.5 on darwin)" generated="2025-02-26T20:37:51.087153" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login" source="/Users/poonyapat/PKGproject/robotframework/test_login.robot">
+<test id="s1-t1" name="Login With Correct Credentials" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T20:37:51.185546" level="INFO">Opening browser 'chrome' to base url 'https://idpeself.sso.go.th/login/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T20:37:51.185417" elapsed="3.173594"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T20:37:54.359935" elapsed="0.377473"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@class='form-control txt-label-login']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-26T20:37:54.737552" elapsed="0.459793"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T20:37:55.197679" level="INFO">Typing text '1340400146229' into text field 'xpath=//input[@class='form-control txt-label-login']'.</msg>
+<arg>xpath=//input[@class='form-control txt-label-login']</arg>
+<arg>${USERNAME_CORRECT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T20:37:55.197494" elapsed="0.154458"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T20:37:55.352358" level="INFO">Typing text 'Ohm@060894590' into text field 'xpath=//input[@type='password']'.</msg>
+<arg>xpath=//input[@type='password']</arg>
+<arg>${PASSWORD_CORRECT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T20:37:55.352178" elapsed="0.064677"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-26T20:37:55.417198" level="INFO">Clicking button 'xpath=//button[contains(text(),'เข้าสู่ระบบ')]'.</msg>
+<arg>xpath=//button[contains(text(),'เข้าสู่ระบบ')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T20:37:55.417025" elapsed="0.048730"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-26T20:37:58.466638" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-26T20:37:55.465911" elapsed="3.000856"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-26T20:37:58.467131" level="INFO">"Waiting for the main page to appear..."</msg>
+<arg>"Waiting for the main page to appear..."</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-26T20:37:58.466996" elapsed="0.000159"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2025-02-26T20:38:09.144942" level="INFO">${current_url} = https://eself.sso.go.th/#/index?user_token=2e7a1aea520b8d994c270043a890914a25680226203755626&amp;idp_login=IdpEself</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2025-02-26T20:37:58.467247" elapsed="10.677728"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-26T20:38:09.145280" level="INFO">Current URL is: https://eself.sso.go.th/#/index?user_token=2e7a1aea520b8d994c270043a890914a25680226203755626&amp;idp_login=IdpEself</msg>
+<arg>Current URL is: ${current_url}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-26T20:38:09.145130" elapsed="0.000176"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>${EXPECTED_URL}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-02-26T20:38:09.145381" elapsed="0.000082"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-26T20:38:09.145572" level="INFO">✅ Login Successful and redirected to the correct page.</msg>
+<arg>✅ Login Successful and redirected to the correct page.</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-26T20:38:09.145516" elapsed="0.000075"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-26T20:38:09.352516" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-26T20:38:09.145651" elapsed="0.206930"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T20:38:09.352704" elapsed="0.199257"/>
+</kw>
+<status status="PASS" start="2025-02-26T20:37:51.184971" elapsed="18.367140"/>
+</test>
+<status status="PASS" start="2025-02-26T20:37:51.088167" elapsed="18.464213"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Login" id="s1" pass="1" fail="0" skip="0">Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
